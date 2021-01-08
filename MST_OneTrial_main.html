@@ -37,31 +37,13 @@
             data: jsPsych.timelineVariable('emotion_index')
         };
 
-
-        /*Encoding*/
-        var encoding ={
-            type: 'html-keyboard-response',
-            stimulus: jsPsych.timelineVariable('stimulus'), // add correct answer here? Should items with wrong response deleted later on in analysize
-            choices: ['k','j'], // choose from 2 options?
-            prompt: "<p>Indoor or Outdoor using j or k</p>",
-            trial_duration: 2500,
-            data: jsPsych.timelineVariable('data')
-        };
-
-        /*ITI*/
-        var ITI ={
-            type: 'html-keyboard-response',
-            stimulus: '<div style="font-size:60px;">+</div>',
-            choice: jsPsych.NO_KEYS,
-            trial_duration: 1000
-
-        };
-
         var encoding_procedure ={
-            timeline: [emotion_rating, encoding, ITI],
+            timeline: [emotion_rating],
             timeline_variables: study_stimuli
          };
         timeline.push(encoding_procedure);
+        
+      
 
         
 
