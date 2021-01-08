@@ -14,9 +14,19 @@
         
         /* test trials */
         
-        var study_stimuli = 
+        var study_stimuli = [
             {stimulus: "img/emotion1.png", data: {study_part: 'study', study_correct_response: 'k'}}; //change response button later to represent old picture
+            {stimulus: "img/emotion2.png", data: {study_part: 'study', study_correct_response: 'k'}}
+        ];
+        
+        
+        /*define instruction trial*/
+        var instruction = {
+            type:"html-keyboard-response",
+            stimulus: "Instruction. Press 'g' to start the experiemnt.",
+            choices: 'g'
             
+        };
         
 
         
@@ -32,9 +42,10 @@
 
         
         var encoding_procedure ={
-            timeline: emotion_rating,
+            timeline: [instruction, emotion_rating],
             timeline_variables: study_stimuli,
-            repetitions: 1
+            randomize_order: true,
+            repetitions: 2
          };
         timeline.push(encoding_procedure);
 
