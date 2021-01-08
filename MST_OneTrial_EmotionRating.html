@@ -13,6 +13,11 @@
 
         
         /* test trials */
+        
+        var study_stimuli = [
+            {stimulus: "img/object1.png", emotion: "img/emotion1.png", emotion_index: 'neutral', data: {study_part: 'study', study_correct_response: 'k'}}; //change response button later to represent old picture
+            
+        ];
 
         
         /* Emotion Rating Display */
@@ -22,11 +27,15 @@
             choices: ['0','1','2','3'],
             prompt: "<p>Emotion rating from 0 to 4</p>",
             trial_duration: 4000,
-            //data: jsPsych.timelineVariable('emotion_index')
+            data: jsPsych.timelineVariable('emotion_index')
         };
 
         
-        timeline.push(emotion_rating);
+        var encoding_procedure ={
+            timeline: [emotion_rating],
+            timeline_variables: study_stimuli
+         };
+        timeline.push(encoding_procedure);
 
         /* start the experiment */
         jsPsych.init({
