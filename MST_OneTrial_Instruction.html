@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MST</title>
+        <script src="jspsych-6.0.5/jspsych.js"></script>
+        <script src="jspsych-6.0.5/plugins/jspsych-html-keyboard-response.js"></script>
+        <script src="jspsych-6.0.5/plugins/jspsych-image-keyboard-response.js"></script>
+        <link href="jspsych-6.0.5/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+    </head>
+    <body></body>
+    <script>
+        var timeline = [];
+
+        /*define instruction trial*/
+        var instruction = {
+            type:"html-keyboard-response",
+            stimulus: "Instruction. Press 'g' to start the experiemnt.",
+            choices: 'g'
+            
+        };
+        timeline.push(instruction);
+        
+        
+        
+      
+
+        
+
+        /* start the experiment */
+        jsPsych.init({
+            timeline: timeline,
+            on_finish: function(){
+                jsPsych.data.displayData();
+            }
+        })
+
+    </script>
+</html>
