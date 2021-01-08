@@ -14,10 +14,10 @@
         
         /* test trials */
         
-        var study_stimuli = [
+        var study_stimuli = 
             {stimulus: "img/emotion1.png", data: {study_part: 'study', study_correct_response: 'k'}}; //change response button later to represent old picture
             
-        ];
+        
 
         
         /* Emotion Rating Display */
@@ -32,7 +32,7 @@
 
         
         var encoding_procedure ={
-            timeline: [emotion_rating],
+            timeline: emotion_rating,
             timeline_variables: study_stimuli
          };
         timeline.push(encoding_procedure);
