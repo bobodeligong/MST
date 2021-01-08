@@ -15,8 +15,8 @@
         /* test trials */
         
         var study_stimuli = [
-            {stimulus: "img/emotion1.png"}, //change response button later to represent old picture
-            {stimulus: "img/emotion2.png"}
+            {emotion: "img/emotion1.png"}, //change response button later to represent old picture
+            {emotion: "img/emotion2.png"}
         ];
         
         
@@ -33,7 +33,7 @@
         /* Emotion Rating Display */
         var emotion_rating = {
             type: 'image-keyboard-response',
-            stimulus: jsPsych.timelineVariable('stimulus'),
+            stimulus: jsPsych.timelineVariable('emotion'),
             choices: ['0','1','2','3'],
             prompt: "<p>Emotion rating from 0 to 4</p>",
             trial_duration: 4000,
