@@ -14,56 +14,13 @@
         /*define instruction trial*/
         var instruction = {
             type:"html-keyboard-response",
-            stimulus: "Instruction. Press Enter to start the experiemnt.",
-            choices: 'enter'
+            stimulus: "Instruction. Press 'g' to start the experiemnt.",
+            choices: 'g'
             
         };
         timeline.push(instruction);
         
-        /* test trials */
-
-        var study_stimuli = [
-            {stimulus: "img/object1.png", emotion: "img/emotion1.png", emotion_index: 'neutral', data: {study_part: 'study', study_correct_response: 'k'}}; //change response button later to represent old picture
-            {stimulus: "img/object2.png", emotion: "img/emotion2.png", emotion_index: 'negative', data: {study_part: 'study', study_correct_response: 'j'}}; 
-            {stimulus: "img/object3.png", emotion: "img/emotion3.png", emotion_index: 'neutral', data: {study_part: 'study', study_correct_response: 'k'}}
-        ]
-
         
-        /* Emotion Rating Display */
-        var emotion_rating = {
-            type: 'html-keyboard-response',
-            stimulus: jsPsych.timelineVariable('emotion'),
-            choices: ['0','1','2','3','4'],
-            prompt: "<p>Emotion rating from 0 to 4</p>",
-            trial_duration: 4000
-            data: jsPsych.timelineVariable('emotion_index')
-        };
-
-
-        /*Encoding*/
-        var encoding ={
-            type: 'html-keyboard-response',
-            stimulus: jsPsych.timelineVariable('stimulus'), // add correct answer here? Should items with wrong response deleted later on in analysize
-            choices: ['k','j'], // choose from 2 options?
-            prompt: "<p>Indoor or Outdoor using j or k</p>",
-            trial_duration: 2500,
-            data: jsPsych.timelineVariable('data')
-        };
-
-        /*ITI*/
-        var ITI ={
-            type: 'html-keyboard-response',
-            stimulus: '<div style="font-size:60px;">+</div>',
-            choice: jsPsych.NO_KEYS,
-            trial_duration: 1000
-
-        };
-
-        var encoding_procedure ={
-            timeline: [emotion_rating, encoding, ITI],
-            timeline_variables: study_stimuli
-         };
-        timeline.push(encoding_procedure);
 
         
 
