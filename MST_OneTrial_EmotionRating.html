@@ -23,7 +23,7 @@
         /* Emotion Rating Display */
         var emotion_rating = {
             type: 'image-keyboard-response',
-            stimulus: 'img/emotion1.png',
+            stimulus: jsPsych.timelineVariable('emotion'),
             choices: ['0','1','2','3'],
             prompt: "<p>Emotion rating from 0 to 4</p>",
             trial_duration: 4000,
